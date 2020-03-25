@@ -1,10 +1,10 @@
 function startMap(arr) {
 
-  const mapCenter = { lat: 30.3977000, lng: 2.190471916 };
+  const mapCenter = { lat: 41.3977000, lng: 0.190471916 };
 
   const myMap = new google.maps.Map(document.getElementById('map'),
     {
-      zoom: 5,
+      zoom: 7,
       center: mapCenter
     }
   );
@@ -30,7 +30,7 @@ axios
     let placesArr = responseFromAPI.data;
     let positionArr = [];
     positionArr = placesArr.map((place) => {
-      return [place.name, place.location.coordinates, place._id];
+      return [place.name, place.location.coordinates];
     })
     startMap(positionArr);
   })

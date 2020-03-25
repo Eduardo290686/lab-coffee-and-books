@@ -1,11 +1,26 @@
-<p>Welcome to Maps</p>
-<a href="createPlace">Add a new location</a>
-<div id="map"></div>
-{{#each places}}
-<a href="/updatePlace/{{this._id}}">{{this.name}}</a>
-{{/each}}
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-hDzwHXo7TWsyH9rK1Sa3m8pKA00CiJM">
-</script>
-<script src="/javascripts/script.js"></script>
-</script>
+<div id="map-page-container">
+
+  <a href="createPlace" id="create-place">
+    <div>Add a new location</div>
+  </a>
+
+  <div id="map-links-container">
+
+    <div id="map"></div>
+
+    <div id="links-container">
+      <p class="text">Update location</p>
+      {{#each places}}
+      <a href="/updatePlace/{{this._id}}" class="update-container">{{this.name}}</a>
+      {{/each}}
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-hDzwHXo7TWsyH9rK1Sa3m8pKA00CiJM">
+  </script>
+  <script src="/javascripts/script.js"></script>
+  </script>
+
+</div>
